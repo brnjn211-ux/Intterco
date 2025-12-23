@@ -105,7 +105,7 @@
         if (!greeted) {
           greeted = true;
           // Tech-style greeting
-          appendMessage('bot', "Intterco Systems Online. How can we engineer your automation?");
+          appendMessage('bot', "Intterco Systems Online. How can we assist you today?");
         }
         input.focus();
       }
@@ -146,4 +146,5 @@
     injectHTML();
     bindBehavior();
   });
+
 })();
