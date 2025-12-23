@@ -1,6 +1,6 @@
 (function () {
   // CONFIGURATION
-  // REPLACE THIS with your actual N8N Webhook URL for CHAT
+  // REPLACE THIS with your actual N8N Webhook URL
   const WEBHOOK_URL = 'https://n8n.srv1152156.hstgr.cloud/webhook/intterco-chat'; 
   
   let greeted = false;
@@ -102,12 +102,18 @@
     function toggleChat(show) {
       wrap.classList.toggle('open', show);
       if (show) {
+        // HIDE LAUNCHER WHEN CHAT IS OPEN
+        openBtn.style.display = 'none';
+        
         if (!greeted) {
           greeted = true;
           // Tech-style greeting
-          appendMessage('bot', "Intterco Systems Online. How can we assist you today?");
+          appendMessage('bot', "Intterco Systems Online. How can we engineer your automation?");
         }
         input.focus();
+      } else {
+        // SHOW LAUNCHER WHEN CHAT IS CLOSED
+        openBtn.style.display = 'flex';
       }
     }
 
@@ -146,5 +152,4 @@
     injectHTML();
     bindBehavior();
   });
-
 })();
